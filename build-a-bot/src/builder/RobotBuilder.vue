@@ -9,9 +9,9 @@
         </div>
             <div class="middle-row">
             <div class="left part">
-                <img v-bind:src="availableParts.arms[selectedArmIndex].src" title="left arm"/>
-                <button v-on:click="selectPrevArm()" class="prev-selector">&#9650;</button>
-                <button v-on:click="selectNextArm()" class="next-selector">&#9660;</button>
+                <img v-bind:src="availableParts.arms[selectedLeftArmIndex].src" title="left arm"/>
+                <button v-on:click="selectPrevLeftArm()" class="prev-selector">&#9650;</button>
+                <button v-on:click="selectNextLeftArm()" class="next-selector">&#9660;</button>
             </div>
             <div class="center part">
                 <img v-bind:src="availableParts.torsos[selectedTorsoIndex].src" title="left arm"/>
@@ -19,7 +19,7 @@
                 <button v-on:click="selectNextTorso()" class="next-selector">&#9658;</button>
             </div>
             <div class="right part">
-                <img v-bind:src="availableParts.arms[selectedArmIndex].src" title="left arm"/>
+                <img v-bind:src="availableParts.arms[selectedRightArmIndex].src" title="left arm"/>
                 <button v-on:click="selectPrevArm()" class="prev-selector">&#9650;</button>
                 <button v-on:click="selectNextArm()" class="next-selector">&#9660;</button>
             </div>
@@ -53,7 +53,8 @@ export default {
     return {
       availableParts,
       selectedHeadIndex: 0,
-      selectedArmIndex: 0,
+      selectedLeftArmIndex: 0,
+      selectedRightArmIndex: 0,
       selectedBaseIndex: 0,
       selectedTorsoIndex: 0,
     };
@@ -65,9 +66,15 @@ export default {
         availableParts.heads.length,
       );
     },
-    selectNextArm() {
-      this.selectedArmIndex = getNextValidIndex(
-        this.selectedArmIndex,
+    selectNextLeftArm() {
+      this.selectedLeftArmIndex = getNextValidIndex(
+        this.selectedLeftArmIndex,
+        availableParts.arms.length,
+      );
+    },
+    selectNextRightArm() {
+      this.selectedRightArmIndex = getNextValidIndex(
+        this.selectedRightArmIndex,
         availableParts.arms.length,
       );
     },
@@ -89,9 +96,15 @@ export default {
         availableParts.heads.length,
       );
     },
-    selectPrevArm() {
-      this.selectedArmIndex = getPreviousValidIndex(
-        this.selectedArmIndex,
+    selectPrevLeftArm() {
+      this.selectedLeftArmIndex = getPreviousValidIndex(
+        this.selectedLeftArmIndex,
+        availableParts.arms.length,
+      );
+    },
+    selectPrevRightArm() {
+      this.selectedRightArmIndex = getPreviousValidIndex(
+        this.selectedRightArmIndex,
         availableParts.arms.length,
       );
     },
