@@ -60,38 +60,50 @@ export default {
   },
   methods: {
     selectNextHead() {
-      this.selectedHeadIndex = getNextValidIndex(this.selectNextHead, availableParts.heads.length);
+      this.selectedHeadIndex = getNextValidIndex(
+        this.selectedHeadIndex,
+        availableParts.heads.length,
+      );
     },
     selectNextArm() {
-      this.selectedArmIndex = getNextValidIndex(this.selectNextArm, availableParts.arms.length);
+      this.selectedArmIndex = getNextValidIndex(
+        this.selectedArmIndex,
+        availableParts.arms.length,
+      );
     },
     selectNextTorso() {
       this.selectedTorsoIndex = getNextValidIndex(
-        this.selectNextTorso,
+        this.selectedTorsoIndex,
         availableParts.torsos.length,
       );
     },
     selectNextBase() {
-      this.selectedBaseIndex = getNextValidIndex(this.selectNextBase, availableParts.bases.length);
+      this.selectedBaseIndex = getNextValidIndex(
+        this.selectedBaseIndex,
+        availableParts.bases.length,
+      );
     },
     selectPrevHead() {
       this.selectedHeadIndex = getPreviousValidIndex(
-        this.selectNextHead,
+        this.selectedHeadIndex,
         availableParts.heads.length,
       );
     },
     selectPrevArm() {
-      this.selectedArmIndex = getPreviousValidIndex(this.selectNextArm, availableParts.arms.length);
+      this.selectedArmIndex = getPreviousValidIndex(
+        this.selectedArmIndex,
+        availableParts.arms.length,
+      );
     },
     selectPrevTorso() {
       this.selectedTorsoIndex = getPreviousValidIndex(
-        this.selectNextTorso,
+        this.selectedTorsoIndex,
         availableParts.torsos.length,
       );
     },
     selectPrevBase() {
       this.selectedBaseIndex = getPreviousValidIndex(
-        this.selectNextBase,
+        this.selectedBaseIndex,
         availableParts.bases.length,
       );
     },
