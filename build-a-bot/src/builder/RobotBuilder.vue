@@ -9,24 +9,24 @@
         </div>
             <div class="middle-row">
             <div class="left part">
-                <img v-bind:src="availableParts.heads[0].src" title="left arm"/>
+                <img v-bind:src="availableParts.arms[0].src" title="left arm"/>
                 <button class="prev-selector">&#9650;</button>
                 <button class="next-selector">&#9660;</button>
             </div>
             <div class="center part">
-                <img v-bind:src="availableParts.heads[0].src" title="left arm"/>
+                <img v-bind:src="availableParts.torsos[0].src" title="left arm"/>
                 <button class="prev-selector">&#9668;</button>
                 <button class="next-selector">&#9658;</button>
             </div>
             <div class="right part">
-                <img v-bind:src="availableParts.heads[0].src" title="left arm"/>
+                <img v-bind:src="availableParts.arms[0].src" title="left arm"/>
                 <button class="prev-selector">&#9650;</button>
                 <button class="next-selector">&#9660;</button>
             </div>
         </div>
         <div class="bottom-row">
             <div class="bottom part">
-                <img v-bind:src="availableParts.heads[0].src" title="left arm"/>
+                <img v-bind:src="availableParts.bases[0].src" title="left arm"/>
                 <button class="prev-selector">&#9668;</button>
                 <button class="next-selector">&#9658;</button>
             </div>
