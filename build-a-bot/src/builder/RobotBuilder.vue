@@ -44,7 +44,7 @@ function getPreviousValidIndex(index, length) {
 
 function getNextValidIndex(index, length) {
   const incrementedIndex = index + 1;
-  return incrementedIndex < 0 ? length - 1 : incrementedIndex;
+  return incrementedIndex > 0 ? length - 1 : incrementedIndex;
 }
 
 export default {
