@@ -20,8 +20,8 @@
             </div>
             <div class="right part">
                 <img v-bind:src="availableParts.arms[selectedRightArmIndex].src" title="left arm"/>
-                <button v-on:click="selectPrevArm()" class="prev-selector">&#9650;</button>
-                <button v-on:click="selectNextArm()" class="next-selector">&#9660;</button>
+                <button v-on:click="selectPrevRightArm()" class="prev-selector">&#9650;</button>
+                <button v-on:click="selectNextRightArm()" class="next-selector">&#9660;</button>
             </div>
         </div>
         <div class="bottom-row">
