@@ -35,15 +35,16 @@
 </template>
 
 <script>
-    import availableParts from '../data/parts'
-    export default{
-        name: 'RobotBuilder',
-        data() {
-          return {
-            availableParts,
-          };
-        },
+import availableParts from '../data/parts';
+
+export default {
+  name: 'RobotBuilder',
+  data() {
+    return {
+      availableParts,
     };
+  },
+};
 </script>
 
 <style >
@@ -52,7 +53,7 @@
   width:165px;
   height:165px;
   border: 3px solid #aaa;
-} 
+}
 .part img {
   width:165px;
 }
@@ -115,20 +116,20 @@
 .left .next-selector {
   top: auto;
   bottom: -28px;
-  left: -3px;    
+  left: -3px;
   width: 144px;
   height: 25px;
 }
 .right .prev-selector {
   top: -28px;
-  left: 24px;  
+  left: 24px;
   width: 144px;
   height: 25px;
 }
 .right .next-selector {
   top: auto;
   bottom: -28px;
-  left: 24px;    
+  left: 24px;
   width: 144px;
   height: 25px;
 }
