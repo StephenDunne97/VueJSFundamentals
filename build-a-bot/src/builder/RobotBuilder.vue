@@ -179,7 +179,7 @@ export default {
 };
 </script>
 
-<style >
+<style>
 .part {
   position: relative;
   width:165px;
