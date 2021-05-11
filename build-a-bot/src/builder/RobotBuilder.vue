@@ -2,9 +2,9 @@
     <div>
         <div class="top-row">
             <div class="top part">
-                <img v-bind:src="availableParts.heads[selectedHeadIndex].src" title="head"/>
-                <button v-on:click="selectPrevHead()" class="prev-selector">&#9668;</button>
-                <button v-on:click="selectNextHead()" class="next-selector">&#9658;</button>
+                <img :src="availableParts.heads[selectedHeadIndex].src" title="head"/>
+                <button @click="selectPrevHead()" class="prev-selector">&#9668;</button>
+                <button @click="selectNextHead()" class="next-selector">&#9658;</button>
             </div>
         </div>
             <div class="middle-row">
