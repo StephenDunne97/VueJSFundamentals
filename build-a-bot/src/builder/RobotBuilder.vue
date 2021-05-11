@@ -14,14 +14,14 @@
                 <button v-on:click="selectNextLeftArm()" class="next-selector">&#9660;</button>
             </div>
             <div class="center part">
-                <img v-bind:src="availableParts.torsos[selectedTorsoIndex].src" title="left arm"/>
+                <img :src="availableParts.torsos[selectedTorsoIndex].src" title="left arm"/>
                 <button v-on:click="selectPrevTorso()" class="prev-selector">&#9668;</button>
                 <button v-on:click="selectNextTorso()" class="next-selector">&#9658;</button>
             </div>
             <div class="right part">
-                <img v-bind:src="availableParts.arms[selectedRightArmIndex].src" title="left arm"/>
-                <button v-on:click="selectPrevRightArm()" class="prev-selector">&#9650;</button>
-                <button v-on:click="selectNextRightArm()" class="next-selector">&#9660;</button>
+                <img :src="availableParts.arms[selectedRightArmIndex].src" title="left arm"/>
+                <button @click="selectPrevRightArm()" class="prev-selector">&#9650;</button>
+                <button @click="selectNextRightArm()" class="next-selector">&#9660;</button>
             </div>
         </div>
         <div class="bottom-row">
