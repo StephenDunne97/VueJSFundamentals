@@ -58,6 +58,7 @@
 
 <script>
 import availableParts from '../data/parts';
+import createdHookMixin from './created-hook-mixins';
 
 function getPreviousValidIndex(index, length) {
   const deprecatedIndex = index - 1;
@@ -71,9 +72,6 @@ function getNextValidIndex(index, length) {
 
 export default {
   name: 'RobotBuilder',
-  created() {
-    console.log('RobotBuilder Component Created');
-  },
   data() {
     return {
       availableParts,
@@ -85,7 +83,7 @@ export default {
       selectedTorsoIndex: 0,
     };
   },
-
+  mixins: [createdHookMixin],
   computed: {
     saleBorderClass() {
       return this.selectedRobot.head.onSale ? 'sale-border' : '';
