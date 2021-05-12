@@ -88,10 +88,10 @@ export default {
       return this.selectedRobot.head.onSale ? 'sale-border' : '';
     },
     headBorderStyle() {
-      return{
-        border: this.selectedRobot.head.onSale ?
-          '3px solid red' :
-          '3px solid #aaa',
+      return {
+        border: this.selectedRobot.head.onSale
+          ? '3px solid red'
+          : '3px solid #aaa',
       };
     },
     selectedRobot() {
@@ -179,7 +179,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 .part {
   position: relative;
   width:165px;
