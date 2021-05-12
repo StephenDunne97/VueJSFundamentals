@@ -71,6 +71,9 @@ function getNextValidIndex(index, length) {
 
 export default {
   name: 'RobotBuilder',
+  created() {
+    console.log('RobotBuilder Component Created');
+  },
   data() {
     return {
       availableParts,
