@@ -6,15 +6,15 @@
             {{selectedRobot.head.title}}
             <span v-if="selectedRobot.head.onSale" class="sale">Sale!</span>
           </div>-->
-          <PartSelector/>
+          <PartSelector :parts="availableParts.heads"/>
         </div>
-            <div class="middle-row">
-            <PartSelector/>
-            <PartSelector/>
-            <PartSelector/>
+        <div class="middle-row">
+          <PartSelector :parts="availableParts.arms"/>
+          <PartSelector :parts="availableParts.torsos"/>
+          <PartSelector :parts="availableParts.arms"/>
         </div>
         <div class="bottom-row">
-            <PartSelector/>
+          <PartSelector :parts="availableParts.bases"/>
         </div>
         <div>
           <h1>Cart</h1>
@@ -43,7 +43,9 @@ import PartSelector from './PartSelector.vue';
 
 export default {
   name: 'RobotBuilder',
-  components: { PartSelector },
+  components: {
+    PartSelector,
+  },
   data() {
     return {
       availableParts,
@@ -79,7 +81,7 @@ export default {
         + robot.rightArm.cost
         + robot.torso.cost
         + robot.base.cost;
-      this.cart.push(Object.assign({}, robot, { cost }));
+      this.cart.push(...robot, ...{ cost });
     },
   },
 };

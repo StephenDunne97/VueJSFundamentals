@@ -8,10 +8,6 @@
 </template>
 
 <script>
-import availableParts from '../data/parts';
-
-const parts = availableParts.heads;
-
 function getPreviousValidIndex(index, length) {
   const deprecatedIndex = index - 1;
   return deprecatedIndex < 0 ? length - 1 : deprecatedIndex;
@@ -23,28 +19,29 @@ function getNextValidIndex(index, length) {
 }
 
 export default {
-    data() {
-        return { selectedPartIndex: 0 };
+  props: ['parts'],
+  data() {
+    return { selectedPartIndex: 0 };
+  },
+  computed: {
+    selectedPart() {
+      return this.parts[this.selectedPartIndex];
     },
-    computed: {
-        selectedPart() {
-        return parts[this.selectedPartIndex];
-        },
+  },
+  methods: {
+    selectNextPart() {
+      this.selectedPartIndex = getNextValidIndex(
+        this.selectedPartIndex,
+        this.parts.length,
+      );
     },
-    methods: {
-        selectNextPart() {
-            this.selectedPartIndex = getNextValidIndex(
-            this.selectedPartIndex,
-            parts.length,
-            );
-        },
-        selectPreviousPart() {
-            this.selectedPartIndex = getPreviousValidIndex(
-            this.selectedPartIndex,
-            parts.length,
-            );
-        },
+    selectPreviousPart() {
+      this.selectedPartIndex = getPreviousValidIndex(
+        this.selectedPartIndex,
+        this.parts.length,
+      );
     },
+  },
 };
 
 </script>
