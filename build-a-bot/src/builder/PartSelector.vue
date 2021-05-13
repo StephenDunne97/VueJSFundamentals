@@ -23,29 +23,28 @@ function getNextValidIndex(index, length) {
 }
 
 export default {
-  data() {
-    return { selectedPartIndex: 0 };
-  },
-  computed: {
-    selectedPart() {
-      return parts[this.selectedPartIndex];
+    data() {
+        return { selectedPartIndex: 0 };
     },
-  },
-  methods: {
-    selectNextPart() {
-      this.selectedPartIndex = getNextValidIndex(
-        this.selectedPartIndex,
-        parts.length,
-      );
+    computed: {
+        selectedPart() {
+        return parts[this.selectedPartIndex];
+        },
     },
-    selectPreviousPart() {
-      this.selectedPartIndex = getPreviousValidIndex(
-        this.selectedPartIndex,
-        parts.length,
-      );
+    methods: {
+        selectNextPart() {
+            this.selectedPartIndex = getNextValidIndex(
+            this.selectedPartIndex,
+            parts.length,
+            );
+        },
+        selectPreviousPart() {
+            this.selectedPartIndex = getPreviousValidIndex(
+            this.selectedPartIndex,
+            parts.length,
+            );
+        },
     },
-
-  },
 };
 
 </script>
