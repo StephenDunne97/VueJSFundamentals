@@ -40,18 +40,30 @@ export default {
       return this.parts[this.selectedPartIndex];
     },
   },
+  created() {
+    this.$emit('partSelected', this.selectedPart);
+    // Alerts the parent that a part has been selected within child.
+  },
   methods: {
+    emitSelectedPart() {
+      this.$emit('partSelected', this.selectedPart);
+      // Alerts the parent that a part has been selected within child.
+    },
     selectNextPart() {
       this.selectedPartIndex = getNextValidIndex(
         this.selectedPartIndex,
         this.parts.length,
       );
+      this.emitSelectedPart();
+      // Alerts the parent that a part has been selected within child.
     },
     selectPreviousPart() {
       this.selectedPartIndex = getPreviousValidIndex(
         this.selectedPartIndex,
         this.parts.length,
       );
+      this.emitSelectedPart();
+      // Alerts the parent that a part has been selected within child.
     },
   },
 };
