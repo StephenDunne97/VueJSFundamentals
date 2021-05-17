@@ -4,8 +4,10 @@
       <nav>
         <ul>
           <li class="nav-item">
-            <img class="logo" src="./assets/build-a-bot-logo.png"/>
-            Build-a-Bot
+            <router-link :to="{name:'Home'}">
+              <img class="logo" src="./assets/build-a-bot-logo.png"/>
+              Build-a-Bot
+            </router-link>
           </li>
         </ul>
       </nav>
