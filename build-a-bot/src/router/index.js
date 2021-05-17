@@ -1,9 +1,9 @@
 import { createRouter, createWebHistory } from 'vue-router';
 import HomePage from '../home/HomePage.vue';
 import RobotBuilder from '../builder/RobotBuilder.vue';
+import PartsInfo from '../parts/PartsInfo.vue';
 
-// Vue.use(Router); // Tells Vue that we want to use routing
-const routes = [
+const routes = [  // Array of routes
   {
     path: '/', // URL
     name: 'Home',
@@ -13,7 +13,12 @@ const routes = [
     path: '/build',
     name: 'Build',
     component: RobotBuilder,
-  }, // Array of routes
+  },
+  {
+    path: '/parts',
+    name: 'Parts',
+    component: PartsInfo,
+  },
 ];
 
 const router = createRouter({
