@@ -40,11 +40,11 @@ export default {
       return this.parts[this.selectedPartIndex];
     },
   },
-  created() {   // Componenet lifecycle hook that is called when the component is created 
+  created() { // Componenet lifecycle hook that is called when the component is created
     this.$emit('partSelected', this.selectedPart);
     // Alerts the parent that a part has been selected within child.
   },
-  updated() {   // Componenet lifecycle hook that is called when the component is updated 
+  updated() { // Componenet lifecycle hook that is called when the component is updated
     this.$emit('partSelected', this.selectedPart);
     // Alerts the parent that a part has been selected within child.
   },
