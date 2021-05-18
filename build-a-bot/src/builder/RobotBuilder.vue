@@ -75,8 +75,8 @@ export default {
   beforeRouteLeave(to, from, next) { // Route guard to verify that the user wants to leave the page.
     if (this.addedToCart) {
       next(true);
-    }
-    else {
+    } else {
+      // eslint-disable-next-line no-alert, no-restricted-globals
       const response = confirm('You have not added your robot to car. Are you sure you want to leave?');
       next(response);
     }
@@ -121,6 +121,7 @@ export default {
         + robot.rightArm.cost
         + robot.torso.cost
         + robot.base.cost;
+      // eslint-disable-next-line prefer-object-spread
       this.cart.push(Object.assign({}, robot, { cost }));
       this.addedToCart = true;
     },
