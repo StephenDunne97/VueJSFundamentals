@@ -65,8 +65,14 @@ export default {
         this.parts.length,
       );
     },
-    showPartInfo() { 
-      this.$router.push('/parts');
+    showPartInfo() {
+      this.$router.push({
+        name: 'Parts',
+        params: {
+          id: this.selectedPart.id,
+          partType: this.selectedPart.type,
+        },
+      });
     },
   },
 };

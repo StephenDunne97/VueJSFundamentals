@@ -3,7 +3,7 @@ import HomePage from '../home/HomePage.vue';
 import RobotBuilder from '../builder/RobotBuilder.vue';
 import PartsInfo from '../parts/PartsInfo.vue';
 
-const routes = [  // Array of routes
+const routes = [ // Array of routes
   {
     path: '/', // URL
     name: 'Home',
@@ -15,9 +15,10 @@ const routes = [  // Array of routes
     component: RobotBuilder,
   },
   {
-    path: '/parts',
+    path: '/parts/:partType/:id',
     name: 'Parts',
     component: PartsInfo,
+    props: true,
   },
 ];
 
