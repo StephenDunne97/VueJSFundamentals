@@ -10,7 +10,6 @@ import RobotBases from '../parts/RobotBases.vue';
 import SidebarStandard from '../sidebars/SidebarStandard.vue';
 import SidebarBuild from '../sidebars/SidebarBuild.vue';
 
-
 const routes = [ // Array of routes
   {
     path: '/', // URL
