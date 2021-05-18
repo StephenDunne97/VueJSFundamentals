@@ -19,10 +19,6 @@
            </CollapsibleSection>
           </div>
         <div class="top-row">
-          <!--<div class="robot-name">
-            {{selectedRobot.head.title}}
-            <span v-if="selectedRobot.head.onSale" class="sale">Sale!</span>
-          </div>-->
           <PartSelector
             :parts="availableParts.heads"
             position="top"
@@ -76,6 +72,15 @@ import CollapsibleSection from '../shared/CollapsibleSection.vue';
 
 export default {
   name: 'RobotBuilder',
+  beforeRouteLeave(to, from, next) { // Route guard to verify that the user wants to leave the page.
+    if (this.addedToCart) {
+      next(true);
+    }
+    else {
+      const response = confirm('You have not added your robot to car. Are you sure you want to leave?');
+      next(response);
+    }
+  },
   components: {
     PartSelector,
     CollapsibleSection,
@@ -83,6 +88,7 @@ export default {
   data() {
     return {
       availableParts,
+      addedToCart: false,
       cart: [],
       selectedRobot: {
         head: {},
@@ -116,6 +122,7 @@ export default {
         + robot.torso.cost
         + robot.base.cost;
       this.cart.push(Object.assign({}, robot, { cost }));
+      this.addedToCart = true;
     },
   },
 };
