@@ -20,6 +20,11 @@ export default createStore({
         .then((result) => commit('updateParts', result.data)) // Commit updated data to the store via the update parts mutation
         .catch(console.error);
     },
+    addRobotToCart({ commit, state }, robot) {
+      const cart = [...state.cart, robot]; // Getting the contents of the cart
+      axios.post('/api/cart', cart) // Posting the cart to the cart API endpoint
+        .then(() => commit('addRobotToCart', robot)); // Inserts robot to local store
+    },
   },
   getters: {
     cartSaleItems(state) {
