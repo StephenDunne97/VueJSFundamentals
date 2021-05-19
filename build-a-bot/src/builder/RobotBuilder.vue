@@ -48,6 +48,7 @@
 </template>
 
 <script>
+import { mapActions } from 'vuex';
 import createdHookMixin from './created-hook-mixins';
 import PartSelector from './PartSelector.vue';
 import CollapsibleSection from '../shared/CollapsibleSection.vue';
@@ -55,7 +56,7 @@ import CollapsibleSection from '../shared/CollapsibleSection.vue';
 export default {
   name: 'RobotBuilder',
   created() {
-    this.$store.dispatch('robots/getParts');
+    this.getParts();
   },
   beforeRouteLeave(to, from, next) { // Route guard to verify that the user wants to leave the page.
     if (this.addedToCart) {
@@ -101,6 +102,7 @@ export default {
   },
 
   methods: {
+    ...mapActions('robots', ['getParts', 'addRobotToCart']),
     addToCart() {
       const robot = this.selectedRobot;
       const cost = robot.head.cost
@@ -109,7 +111,7 @@ export default {
         + robot.torso.cost
         + robot.base.cost;
       // eslint-disable-next-line prefer-object-spread
-      this.$store.dispatch('robots/addRobotToCart', Object.assign({}, robot, { cost }))
+      this.$store.addRobotToCart(Object.assign({}, robot, { cost }))
         .then(() => this.$router.push('/cart'));
       this.addedToCart = true;
     },
