@@ -111,7 +111,7 @@ export default {
         + robot.torso.cost
         + robot.base.cost;
       // eslint-disable-next-line prefer-object-spread
-      this.$store.addRobotToCart(Object.assign({}, robot, { cost }))
+      this.addRobotToCart(Object.assign({}, robot, { cost }))
         .then(() => this.$router.push('/cart'));
       this.addedToCart = true;
     },
